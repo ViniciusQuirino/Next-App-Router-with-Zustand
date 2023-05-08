@@ -8,19 +8,19 @@ export default function TestZustand() {
   return (
     <div>
       <button
-        className={"bg-green-500 rounded"}
+        className={"bg-green-500 "}
         onClick={() => addFruit({ id: 1, name: "Morango" })}
       >
         Adicionar Morango
       </button>
       <button
-        className={"bg-red-500 rounded"}
+        className={"bg-red-500 "}
         onClick={() => addFruit({ id: 2, name: "Banana" })}
       >
         Adicionar Banana
       </button>
-      {fruitList.map((elem) => (
-        <li key={elem.id}>
+      {fruitList.map((elem,index) => (
+        <li key={index}>
           <h3>{elem.name}</h3>
           <button
             className={"bg-red-500 rounded"}
