@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 import { api } from "@/services/api";
-
+import qualquerNome from "./styles.module.scss";
 
 export type IPost = {
   id: number;
@@ -22,20 +22,18 @@ async function getPosts() {
 const PostPage = async () => {
   const posts = await getPosts();
 
-  await new Promise((resolve) => {
-    setTimeout(resolve, 3000);
-  });
-
-
+  // await new Promise((resolve) => {
+  //   setTimeout(resolve, 3000);
+  // });
 
   return (
-    <div>
-      <ul>
-        {posts.map((post: IPost) => (
-          <Card key={post.id} post={post} />
-        ))}
-      </ul>
-    </div>
+    <ul className={qualquerNome.container}>
+      {posts.map((post, index) => {
+        const color = index % 2 ? "first" : "second";
+
+        return <Card key={post.id} post={post} color={color} />;
+      })}
+    </ul>
   );
 };
 

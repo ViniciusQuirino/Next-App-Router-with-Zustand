@@ -19,7 +19,7 @@ export const useClientStore = create<IClientStore>((set) => ({
   loadClientData: async () => {
     try {
       set({ error: "" });
-      const { data } = await api.get<IClient[]>("/clientes");
+      const { data } = await api.get<IClient[]>("/posts");
       set({ clientData: data });
     } catch (error) {
      console.log(error);

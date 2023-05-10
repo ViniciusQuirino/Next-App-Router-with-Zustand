@@ -13,10 +13,7 @@ const CardClientes = ({ data }: ICardClientProps) => {
     <div>
       <ul>
         {data.map((elem: any) => (
-          <li key={elem.id}>
-            {elem.nome}
-            <p>{elem.codigo}</p>
-          </li>
+          <li key={elem.id}>{elem.title}</li>
         ))}
       </ul>
     </div>
