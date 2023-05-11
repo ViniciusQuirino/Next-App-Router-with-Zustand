@@ -19,6 +19,7 @@ async function getPosts() {
   }
 }
 
+
 const PostPage = async () => {
   const posts = await getPosts();
 

@@ -20,10 +20,11 @@ export const useClientStore = create<IClientStore>((set) => ({
     try {
       set({ error: "" });
       const { data } = await api.get<IClient[]>("/posts");
+
       set({ clientData: data });
     } catch (error) {
-     console.log(error);
-    //  throw new Error("Failed");
-    } 
+      console.log(error);
+      //  throw new Error("Failed");
+    }
   },
 }));
